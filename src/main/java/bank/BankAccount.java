@@ -15,12 +15,17 @@ public class BankAccount {
         return balance;
     }
 
-    public void deposit(double amount) {
-        // TODO: Add amount to balance
+   public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+        }
     }
 
     public boolean withdraw(double amount) {
-        // TODO: Subtract if enough balance; return true/false
+        if (amount > 0 && balance >= amount) {
+            balance -= amount;
+            return true;
+        }
         return false;
     }
 }
